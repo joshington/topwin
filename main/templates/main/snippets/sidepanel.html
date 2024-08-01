@@ -1,0 +1,48 @@
+<div class="sidebar col-lg-3 col-md-3 col-sm-3" id="mySidepanel">
+    <header>
+        {% if authed %}
+            <h4 style="color:white;font-weight: bold;">
+                Get Started
+            </h4>
+        {% endif %}
+    </header>
+
+    <ul style="list-style-type:none;">
+        <li style="list-style-type:none;">
+            {% if authed %}
+                <a href="" style="text-decoration:none;">
+                    <i class="fa fa-lock fa-1x" style="color:white;padding:2px 30px;" aria-hidden="true">
+                        Create Profile
+                    </i>
+                </a>
+            {% else %}
+                <a href="{% url 'main:dash' %}" style="text-decoration:none;">
+                    <i class="fa fa-qrcode fa-1x" style="color:white;padding:2px 30px;">
+                        Dashboard
+                    </i>
+                </a>
+            {% endif %}
+        </li>
+        <li>
+            <a href="" style="text-decoration:none;">
+                <i class="fa fa-money fa-1x" style="color:white;padding: 2px 30px;">
+                    Tips
+                </i>
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'main:plans' %}" style="text-decoration:none;">
+                <i class="fa fa-credit-card-alt" aria-hidden="true" style="color:white;padding: 2px 30px;">
+                    Plans
+                </i>
+            </a>
+        </li>
+        <li>
+            <a href="" style="text-decoration:none;">
+                <i class="fa fa-repeat fa-1x" style="color:white;padding: 2px 30px;">
+                    Blog
+                </i>
+            </a>
+        </li>
+    </ul>
+</div>

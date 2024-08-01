@@ -1,0 +1,116 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+<section id="top" class="text-center" style="overflow-x:hidden;height: 100%;">
+        <!--title section-->
+        {% include "main/snippets/topbar.html" %}
+
+                <div class="row nowro" style="padding:30px 30px;">
+                    <div class="col img-cover">
+                        <img src="{% static 'main/images/bet3.jpeg' %}"
+                            class="banner"
+                            alt="final" style="
+                                height:60vh;
+                                width:100%;
+                                border-radius: 20px;
+                            "
+                        />
+                    </div>
+
+                    <div class="col" style="padding: 80px 30px;">
+                        <h2 style="font-size: 50px;
+                            color:blue;font-weight: bold;">
+                            Topwin Games
+                        </h2>
+
+                        <h3 style="font-weight: bold;">Your reliable betting partner</h3>
+
+                        <p style="text-align: center;font-size: 20px;">
+                            Your best source for daily betting tips and analysis.
+                        </p>
+
+                        <button style="background-color:#0077b6;width:200px;
+                            color:white;
+                            border:2px solid #0077b6;border-radius: 10px;height:40px;">
+                            <a href="{% url 'main:sign' %}"
+                                style="text-decoration:none;color: white;
+                                    font-weight: bold;font-size: 20px;">
+                                Get Started
+                            </a>
+                        </button>
+                    </div>
+                </div>
+                <h4 style="text-align:center;font-size:30px;font-weight: bold;color: blue;">
+                    How it Works</h4>
+                <div  class="row newrow" style="padding:40px 30px;
+                    height:50vh;margin-bottom: 40px;align-content: center;align-items: center;">
+                    <div class="col-lg-6 col-md-6 col-sm-6" style="
+                        background-color:#f0f0f0;border-radius: 20px;padding:50px 30px;"
+                    >
+                        <div style="display: flex;flex-direction:row;justify-content:space-around;">
+                            <div style="height:60px;width:40%;background-color: #0077b6;
+                                color: white;padding: 20px;border-radius: 10px;">
+                                <h4 class="textn">Create Profile</h4>
+                            </div>
+                            <i class="fa fa-thin fa-arrow-right fa-2x"></i>
+                            <div style="height:60px;width:40%;
+                                background-color: #0077b6;
+                                color: white;padding:20px;border-radius: 10px;">
+                                <h4 class="textn">Activate Account</A:blank></h4>
+                            </div>
+                        </div>
+                        <div style="display: flex;flex-direction:row;
+                            justify-content:space-around;margin-top: 20px;">
+                            <i class="fa fa-sharp fa-regular fa-arrow-up fa-2x"></i>
+                            <i class="fa fa-regular fa-arrow-down fa-2x"></i>
+                        </div>
+                        <div style="display: flex;flex-direction:row;
+                            justify-content:space-around;margin-top: 20px;">
+                            <div style="height:60px;width:40%;background-color: #0077b6;
+                                color: white;padding: 20px;border-radius: 10px;">
+                                <h4 class="textn">Earn</h4>
+                            </div>
+                            <i class="fa fa-arrow-left fa-2x fa-thin"></i>
+                            <div style="height:60px;width:40%;
+                                background-color: #0077b6;
+                                color: white;padding:20px;border-radius: 10px;">
+                                <h4 class="textn">Create Referrals</h4>
+                            </div>
+                        </div>
+
+                        <!--
+                            <div style="display:flex;flex-direction:row;height: 50px;">
+                            <i class="fa fa-chevron-right fa-1x" style="margin-top: 3px;"></i>
+                            <h6 style="font-size: 20px;">Create Profile</h6>
+                        </div>
+                        <div style="display:flex;flex-direction:row;height: 50px;">
+                            <i class="fa fa-chevron-right fa-1x" style="margin-top: 3px;"></i>
+                            <h6 style="font-size: 20px;">Activate Account</h6>
+                        </div>
+                        <div style="display:flex;flex-direction:row;height: 50px;">
+                            <i class="fa fa-chevron-right fa-1x" style="margin-top: 3px;"></i>
+                            <h6 style="font-size: 20px;">Create Referrals</h6>
+                        </div>
+                        <div style="display:flex;flex-direction:row;height: 50px;">
+                            <i class="fa fa-chevron-right fa-1x" style="margin-top: 3px;"></i>
+                            <h6 style="font-size: 20px;">Earn</h6>
+                        </div>
+                        -->
+
+                    </div>
+                    <div class="col">
+                        <img src="{% static 'main/images/refer.jpeg' %}"
+                            alt="final" style="
+                                height:50vh;
+                                width:100%;
+                                border-radius: 20px;
+                            "
+                        />
+                    </div>
+                </div>
+        </div>
+
+
+</section>
+{% endblock %}

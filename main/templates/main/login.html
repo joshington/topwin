@@ -1,0 +1,47 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+    <section>
+        {% include "main/snippets/topbar.html" %}
+        <div class="container-fluid">
+
+            <div class="row loga">
+                <div class="col-lg-6 col-md-6 col-sm-6  col_img" style="padding:40px 50px;">
+                    <img src="{% static 'main/images/bet4.jpeg' %}"
+                        alt="final" style="height: 50vh;border-radius: 18px;"
+                    />
+                </div>
+                <div class="col cola" style="margin-top:40px;">
+                    {% for msg  in messages %}
+                        <div class="callout success">
+                            <button class="close-button" aria-label="Close alert" type="button">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <p>
+                                <strong>{{ msg }}</strong>
+                            </p>
+                        </div>
+                    {% endfor %}
+                    <i class="fa fa-lock fa-2x"  aria-hidden="true" style="margin-left:100px;">
+                        Login</i>
+                    <form  method="POST" style="margin-top: 40px;">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+
+                        <button class="button is-success is-fullwidth  mt-3"
+                            type="submit" style="width:400px;height: 40px;
+                            border:2px solid aqua;font-weight: bold;
+                            font-family: DM Sans,sans-serif;
+                            background-color: aqua;
+                            border-radius:5px;
+                            font-size: 12px;
+                        ">
+                            Login
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "main/base.html" %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+    <section>
+        {% include "main/snippets/topbar.html" %}
+            <div style="display:flex;flex-direction:row;">
+                {% include "main/snippets/sidepanel.html" %}
+                <div class="col colbg"
+                    style="
+                        background-repeat: no-repeat;
+                        background-image: url(../../static/main/images/back.jpeg);
+                        background-size: 100% 100%;
+                    "
+                >
+
+                    <div  class="topcol">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                        <h3 style="
+                            font-weight: bold;font-family: Times New Roman, Times, serif;
+                        ">
+                            Create a Secure Profile
+                        </h3>
+                        <i class="fa fa-lock fa-2x"  aria-hidden="true"></i>
+                    </div>
+                    {% for msg  in messages %}
+                        <div class="callout success">
+                            <button class="close-button" aria-label="Close alert" type="button">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <p>
+                                <strong>{{ msg }}</strong>
+                            </p>
+                        </div>
+                    {% endfor %}
+                    <div class="formnow">
+                        <form
+                            method="POST"  enctype="multipart/form-data"
+                        >
+                            {% csrf_token %}
+                            {{ register_form|crispy }}
+
+                            <button class="button is-success is-fullwidth  mt-3"
+                                    type="submit" style="width:400px;height: 40px;
+                                        border:2px solid aqua;
+                                        font-weight: bold;
+                                        font-family: DM Sans,sans-serif;
+                                        background-color: aqua;
+                                        border-radius:5px;
+                                        font-size: 18px;
+                                    "
+                                >
+                                Create Profile
+                            </button>
+
+                            <a href="#" style="text-decoration:none;color:blue;">
+                                <p style="text-align:center;width:400px;margin-top: 40px;font-size: 12px;">
+                                    By creating profile, you agree to the TukoreUg Terms of Use,
+                                        Privacy Policy, Client Agreement
+
+                                </p>
+                            </a>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+{% endblock %}

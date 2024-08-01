@@ -1,0 +1,82 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+
+
+
+{% block content %}
+    <section>
+        {% include "main/snippets/dashtop.html" with instance=obj %}
+        <div style="display:flex;flex-direction:row;">
+            {% include "main/snippets/sidepanel.html" with registered=registered %}
+            <div class="mano">
+                <div  class="testdash">
+                    {% for msg  in messages %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert"  data-closable>
+                            <strong>{{ msg }}</strong>
+                            <button class="close-button" data-bs-dismiss="alert" aria-label="Close alert" 
+                                type="button" 
+                                data-close
+                            >
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                    <div class="dashrow">
+                        <h4>
+                            Your   Earnings
+                        </h4>
+                        {% if  obj.paid %}
+                            <a href="">
+                                <button  class="new_kaka">
+                                    Withdraw
+                                </button>
+                            </a>
+                        {% else %}
+                            <div  class="nowearn"  style="display:flex;flex-direction:row;">
+                                <a href="{% url 'main:plans' %}">
+                                    <button  style="background-color:green;height: 40px;
+                                        border: 2px solid green;border-radius: 8px;color: white;
+                                        font-weight: bold;
+                                    ">
+                                        Buy Plan
+                                    </button>
+                                </a>
+
+                            </div>
+                        {% endif %}
+                    </div>
+                    <h4 class="weltext" style="color:green;font-weight:
+                        bold;margin-top: 8px;font-family: cursive;">
+                        Welcome, {{ obj.username }}
+                    </h4>
+
+                    <div class="dodo">
+                        <div class="dodo_col"
+                            <h4>Account Balance</h4>
+                            <h2 style="color:blue;">UGX: {{ wallet.balance }}</h2>
+                        </div>
+                        <div class="dodo_col"
+                            <h4>Referral Earnings</h4>
+                            <h2 style="color:blue;">UGX: {{ wallet.earnings }}</h2>
+                        </div>
+                    </div>
+                    <div class="dodo">
+                        <div class="dodo_col"
+                            <h4>Bonus Earnings</h4>
+                            <h2 style="color:blue;">UGX: {{ wallet.bonus }} </h2>
+                        </div>
+                        <div class="dodo_col"
+                            <h4>Withdraws</h4>
+                            <h2 style="color:blue;">UGX: {{ wallet.withdraws }} </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        
+    </script>
+
+{% endblock %}
